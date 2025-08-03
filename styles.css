@@ -398,7 +398,8 @@ header ul a:hover{
     margin-top: 0;
 }
 
-.project-info button{
+.project-info a{
+    text-decoration: none;
     color: white;
     padding: 15px 35px;
     border-radius: 10px;
@@ -409,7 +410,7 @@ header ul a:hover{
     transition: 0.3s;
 }
 
-.project-info button:hover{
+.project-info a:hover{
     opacity: 0.8;
     box-shadow: 0 0 15px #72a1de81;
 }
