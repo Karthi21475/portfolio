@@ -133,7 +133,6 @@ header ul a:hover{
 
 .hero-info{
     position: absolute;
-    left: 5%;
 }
 
 .hero-info .hero-info-title{
@@ -194,8 +193,9 @@ header ul a:hover{
 
 .scroll-icon {
     position: absolute;
-    left: 49%;
+    left: 50%;
     bottom: 8%;
+    transform: translateX(-50%);
     cursor: pointer;
     font-size: 40px;
     animation: scroll-down 2s linear infinite;
@@ -903,9 +903,6 @@ header ul a:hover{
         right:0;
         
     }
-    .hero-info{
-        bottom: 25%;
-    }
 
     .scroll-icon{
         bottom: 5%;
@@ -1017,11 +1014,6 @@ header ul a:hover{
     
     .hero-info h1{
         font-size: 35px;
-    }
-    
-    .scroll-down{
-        bottom: 15%;
-        left: 60%;
     }
     
     .section-title {
