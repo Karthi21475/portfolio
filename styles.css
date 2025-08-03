@@ -133,6 +133,7 @@ header ul a:hover{
 
 .hero-info{
     position: absolute;
+    left: 5%;
 }
 
 .hero-info .hero-info-title{
@@ -1007,6 +1008,7 @@ header ul a:hover{
     .hero-info{
         top: 50%;
         bottom:-2%;
+        left:0;
         transform: translateY(-50%);
         justify-items: center;
         text-align: center;
