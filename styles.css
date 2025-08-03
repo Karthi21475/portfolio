@@ -4,7 +4,7 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
-    background-color: #001f7c38;
+    background-color: black;
 }
 html{
     scroll-behavior: smooth;
