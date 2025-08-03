@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     padding: 0;
@@ -244,7 +245,7 @@ header ul a:hover{
     display: flex;
     align-items:center;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-around;
     position: relative;
     height: 40vh;
     overflow: hidden;
@@ -262,11 +263,11 @@ header ul a:hover{
 
 .card p{
     display:flex;
-    text-align:justify;
-    max-width: 300px;
-    color: gray;
+    max-width: 90%;
+    color: #fdfdfd8f;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 16px;
+    font-weight: bold;
 }
 
 .card img{
@@ -322,33 +323,26 @@ header ul a:hover{
 }
 
 .card:nth-child(4) p{
-    max-width: 650px;
-}
-
-.card:nth-child(4) h1{
-    bottom: 35%;
+    max-width: 90%;
 }
 
 
 
-.my-project{
+.my-projects{
     display: flex;
     flex-direction: column;
-    gap: 10%;
     align-items: center;
-    position: relative;
-    width: 80%;
-    height: 100vh;
-    margin-top: 200px;
-    margin-bottom: 700px;
+    width: 100%;
 }
 
 .project-card {
     display: flex;
     width: 100%;
     height: 40%;
+    gap:10%;
+    margin-bottom:30px;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 10%;
     justify-content: center;
 }
 
@@ -356,18 +350,18 @@ header ul a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 40%;
+    height:100%;
     mix-blend-mode:exclusion;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
-    min-width: 400px;
-
 }
 
 .project-vid-cont video{
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    height:100%;
     box-shadow: 0 0 10px lightgray;
     border-radius: 20px;
     transition: 0.5s;
@@ -382,8 +376,7 @@ header ul a:hover{
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 50%;
-    padding-left: 10%;
+    width: 45%;
 }
 
 .project-info h1{
@@ -398,8 +391,7 @@ header ul a:hover{
 
 .project-info p{
     width: 90%;
-    max-width: 400px;
-    min-width: 300px;
+    max-width: 300px;
     margin-bottom: 50px;
     margin-top: 0;
 }
@@ -430,11 +422,6 @@ header ul a:hover{
     height:100%;
 }
 
-.skills-section .section-title{
-    font-size:3rem;
-    text-transform: uppercase;
-}
-
 .skills-cont{
     width: 100%;
     height: 80vh;
@@ -443,14 +430,18 @@ header ul a:hover{
     justify-content: center;
     gap:5%;
 }
-
-.skills-vid{
-    height: 100%;
-    mix-blend-mode:exclusion;
+.skills-vid-cont{
+    width:100%;
+    height:100%;
     position: absolute;
     top:8%;
-    left:50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skills-vid{
+    width: 70%;
+    mix-blend-mode:exclusion;
 }
 
 .designer-cont{
@@ -523,7 +514,7 @@ header ul a:hover{
 /* SLIDER  */
 
 .slider{
-    width: 60%;
+    width: 90%;
     height: var(--height);
     overflow: hidden;
     mask-image: linear-gradient(
@@ -639,9 +630,8 @@ header ul a:hover{
 
 .footer{
     width:100%;
-    height: 70px;
+    height: fit-content;
     background-color: rgba(255, 255, 255, 0.121);
-
 }
 
 
@@ -851,10 +841,40 @@ header ul a:hover{
         font-size: 20px;
     }
 }
+@media screen and (orientation: portrait){
+    .skills-cont{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:10vh;
+    }
+    .card:nth-child(3) img{
+        height:50%;
+        grid-row: span 1;
+    }
+    .designer-cont{
+        max-width:85% !important;
+        height:fit-content;
+    }
+    .coder-cont{
+        max-width:85% !important;
+        height:fit-content;
+    }
+    .blackhole-cont video {
+        width: 100%;
+        margin-top: -15% !important;
+    }
+}
 
-@media screen and (max-width: 700px){
+@media screen and (width: 820px),screen and (width: 768px),screen and (width: 1024px){
+    .blackhole-cont video {
+        width: 100%;
+        margin-top: -20% !important;
+    }
+}
+@media screen and (max-width: 768px){
     header {
-        position: fixed;
+        position: absolute;
         height: 50px;
     }
 
@@ -870,10 +890,6 @@ header ul a:hover{
         display: inline;
     }
 
-    .blackhole-cont video {
-        width: 100%;
-        margin-top: -15%;
-    }
 
     .Blur{
         animation: none;
@@ -888,7 +904,7 @@ header ul a:hover{
         
     }
     .hero-info{
-        bottom: 5%;
+        bottom: 25%;
     }
 
     .scroll-icon{
@@ -907,55 +923,30 @@ header ul a:hover{
     .card video{
         width: 100%;
     }
-    
-    .my-projects{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap:2rem;
+    .project-vid-cont{
+        width:45%;
     }
     .project-info h1{
         text-wrap: nowrap;
         font-size: 20px;
     }
-
+    
     .project-info p{
         font-size: 10px;
         text-wrap: wrap;
     }
-
+    
     .project-info button{
         padding: 5px 10px;
     }
-
+    
     .project-card{
         flex-direction: column;
+        align-items: center;
         gap: 30px;
     }
     
-    .project-vid-cont video{
-        width:85%;
-    }
-    
-    .project-info{
-        width: 100%;
-    }
 
-    .skills-cont{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap:10vh;
-    }
-
-    .designer-cont{
-        max-width:85% !important;
-        height:fit-content;
-    }
-    .coder-cont{
-        max-width:85% !important;
-        height:fit-content;
-    }
     .designer-cont h1{
         margin-bottom: 0;
         font-size:2rem;
@@ -973,11 +964,11 @@ header ul a:hover{
         font-size:0.8rem;
         text-align: start;
     }
-
+    
     .slider .list .item img{
         width: 70%;
     }
-
+    
     .contact-section{
         flex-direction: column;
         gap:2rem;
@@ -991,8 +982,9 @@ header ul a:hover{
         border-radius: 10px;
     }
     .soc-con-cont{
-       flex-direction: column;
-       gap:50px;
+        width:100%;
+        flex-direction: column;
+        gap:50px;
     }
     .footer{
         font-size: 10px;
@@ -1001,73 +993,66 @@ header ul a:hover{
 
 
 @media screen and (max-width: 480px) {
-    .skills-vid{
-        width:70%;
-    }
-
+    
     .blackhole-cont {
         overflow: hidden;
     }
-
+    
     .header-left {
         scale: 0.9;
         margin-left: -30px;
     }
-
+    
     .header-left h2 {
         font-size: 20px;
     }
-
+    
     .hero-info{
         top: 50%;
+        bottom:-2%;
         transform: translateY(-50%);
         justify-items: center;
         text-align: center;
     }
-
+    
     .hero-info h1{
         font-size: 35px;
     }
-
+    
     .scroll-down{
         bottom: 15%;
         left: 60%;
     }
-
+    
     .section-title {
         font-size: 25px;
     }
-
+    
     .info-cards{
         display: flex;
         flex-direction: column;
     }
-
+    
     .card {
         min-height: 20rem;
     }
-
+    
     .card h1{
         bottom: 30%;
         font-size: 5px;
     }
-    
 
+    .project-vid-cont{
+        width:85%;
+    }
     .project-card{
         width:85%;
         text-align: left;
     }
     .project-info{
-        width:100%;
-        align-items: flex-start;
+        width:80%;
     }
 
-    .skills-cont{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap:10vh;
-    }
 
     .designer-cont{
         max-width:85% !important;
@@ -1107,7 +1092,4 @@ header ul a:hover{
         width:100%;
     }
 
-    .footer{
-        padding: 15px;
-    }
 }
