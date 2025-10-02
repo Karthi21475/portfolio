@@ -26,24 +26,21 @@ html{
     right: 0;
     bottom: 0;
     z-index: -1;
-    mix-blend-mode:overlay;
 }
 
 
 header{
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    width:100%;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.121);
     backdrop-filter: blur(5px);
     box-shadow: 0 0 15px #72a1dea2;
     z-index: 999;
+    box-sizing: border-box;
+    padding-inline: 2rem;
 }
 
 .header-left{
@@ -51,21 +48,30 @@ header{
     align-items: center;
 }
 
-.header-left img{
-    width: 40px;
-    margin: 0 15px;
-}
-
 
 header ul{
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    padding: 15px 15px;
-    border-radius: 50px;
+    padding: 15px;
+    gap:1rem;
+    anchor-name: --hovered-link;
+}
+header ul::after{
+    content: "";
+    position: absolute;
+    left:anchor(left);
+    right:anchor(right);
+    top:anchor(top);
+    bottom:anchor(bottom);
+    z-index: -1;
+    border-radius: 10px;
     background-color: rgba(0, 0, 69, 0.326);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px #72a1de63;
+
+    position-anchor: --hovered-link;
+
+    transition: all 0.3s linear(0, 0.002 0.5%, 0.01 1%, 0.021 1.5%, 0.04 2.1%, 0.06 2.6%, 0.089 3.2%, 0.122 3.8%, 0.159 4.4%, 0.227 5.4%, 0.318 6.6%, 0.408 7.7%, 0.667 10.8%, 0.801 12.5%, 0.866 13.4%, 0.921 14.2%, 0.978 15.1%, 1.024 15.9%, 1.071 16.8%, 1.108 17.6%, 1.14 18.4%, 1.168 19.2%, 1.191 20%, 1.212 20.9%, 1.226 21.7%, 1.238 22.6%, 1.245 23.7%, 1.246 24.9%, 1.239 26.2%, 1.226 27.5%, 1.209 28.7%, 1.185 30.1%, 1.156 31.6%, 1.059 36.4%, 1.03 38%, 1.006 39.5%, 0.981 41.3%, 0.964 43%, 0.951 44.7%, 0.943 46.5%, 0.94 47.7%, 0.939 49%, 0.944 51.8%, 0.954 54.5%, 0.985 60.7%, 0.998 63.7%, 1.008 67%, 1.014 70.3%, 1.015 72.8%, 1.014 75.5%, 0.999 90.1%, 0.997 94.8%, 1);
 }
 
 header ul li{
@@ -77,11 +83,12 @@ header ul a{
     color: white;
     font-weight: 700;
     transition: 0.3s;
-    margin: 0 10px;
+    padding: 10px;
 }
 
 header ul a:hover{
     text-shadow: 0 0 15px black;
+    anchor-name: --hovered-link;
 }
 
 .box-icons{
@@ -89,38 +96,62 @@ header ul a:hover{
     gap: 40px;
 }
 
-.box-icons p{
+.box-icons a{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     width: 30px;
     height: 30px;
     border: 2px solid #72a1de;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.5s;
+    transition:all 0.5s;
+    color:white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
 }
 
-.box-icons p:hover{
-    background-color: #72a1de;
+.box-icons a::after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 0%;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.box-icons a:hover::after{
+    transition: all 0.3s ease;
+    height:100%;
+}
+
+.box-icons a:nth-child(1):hover::after{
+    background: linear-gradient(135deg,purple,rgb(207, 9, 207),red,orange,yellow);
+}
+.box-icons a:nth-child(2):hover::after{
+    background: white;
+}
+.box-icons a:nth-child(2):hover i{
     color: black;
-    box-shadow: 0 0 15px #72a1de;
+}
+.box-icons a:nth-child(3):hover::after{
+    background: rgb(0, 128, 247);
 }
 
 .blackhole-cont{
+    width:100%;
     position: absolute;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    top:0;
+    transform: translateY(-50%);
     z-index: -1;
     mix-blend-mode: lighten;
   }
   
 .blackhole-cont video{
     width: 100%;
-    margin-top: -23.5%;
 }
 
 .hero-section{
@@ -128,6 +159,7 @@ header ul a:hover{
     display: flex;
     width: 100%;
     height: 100vh;
+    margin-top: -100px;
     align-items: center;
     justify-content: space-between;
 }
@@ -178,7 +210,6 @@ header ul a:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
-/* Gradient Animation */
 .gradient{
     background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
     background-size: 200%;
@@ -341,7 +372,7 @@ header ul a:hover{
     display: flex;
     width: 100%;
     height: 40%;
-    gap:10%;
+    gap:5%;
     margin-bottom:30px;
     flex-wrap: wrap;
     align-items: center;
@@ -352,8 +383,7 @@ header ul a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
-    height:100%;
+    width: 45%;
     mix-blend-mode:exclusion;
     position: relative;
     cursor: pointer;
@@ -363,7 +393,7 @@ header ul a:hover{
 .project-vid-cont video{
     object-fit: contain;
     width: 100%;
-    height:100%;
+    min-height: 230px;
     box-shadow: 0 0 10px lightgray;
     border-radius: 20px;
     transition: 0.5s;
@@ -572,16 +602,13 @@ header ul a:hover{
     gap: 10%;
     align-items: center;
     position: relative;
-}
-
-.soc-con-cont{
-    display: flex;
-    align-items: center;
-    gap:10%;
+    margin-bottom:10vh;
 }
 .social-cont {
     display: flex;
     flex-direction: column;
+    margin-inline: auto;
+    margin-bottom:3rem;
     gap: 25px;
 }
 
@@ -596,45 +623,6 @@ header ul a:hover{
     color: #7668ff;
     font-size: 30px;
     margin-right: 10px;
-}
-
-.contact-cont p{
-    max-width: 400px;
-    margin-top: 30px;
-    margin-bottom: 5px;
-} 
-
-.contact-cont input{
-    padding: 7.5px 30px;
-    background-color: lightgray;
-    width: 80%;
-    height: 25px;
-    border: none;
-    outline : none;
-    border-radius: 10px;
-}
-
-.contact-cont button{
-    margin-top: 30px;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
-    border: 1px solid #72a1de81;
-    background-color: #2200493d;
-    box-shadow: 0 0 5px #72a1de81;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.contact-cont button:hover{
-    opacity: 0.8;
-    box-shadow: 0 0 15px #72a1de81;
-}
-
-.footer{
-    width:100%;
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0.121);
 }
 
 
@@ -796,8 +784,54 @@ header ul a:hover{
     }
 }
 
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    border-radius: 10px;
+    padding:1rem;
+    border:2px solid white;
+    background-color: #0f1217;
+    box-shadow: 0 0 10px lightgray;
 
-
+}
+.contact-form input, .contact-form textarea{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #0f1217;
+    color: white;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: 0.3s;
+}
+.contact-form button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-form button:hover{
+    box-shadow: 0 0 15px #72a1de81;
+    opacity: 0.7;
+}
+.soc-con-cont{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+}
 
 
 
@@ -817,9 +851,6 @@ header ul a:hover{
 
 
 @media screen and (max-width: 1200px){
-    .blackhole-cont video{
-        margin-top: -20%;
-    }
 
     .hero-info h1{
         font-size: 40px;
@@ -863,23 +894,8 @@ header ul a:hover{
         max-width:85% !important;
         height:fit-content;
     }
-    .blackhole-cont video {
-        width: 100%;
-        margin-top: -15% !important;
-    }
-}
-
-@media screen and (width: 820px),screen and (width: 768px),screen and (width: 1024px){
-    .blackhole-cont video {
-        width: 100%;
-        margin-top: -20% !important;
-    }
 }
 @media screen and (max-width: 768px){
-    header {
-        position: absolute;
-        height: 50px;
-    }
 
     header ul{
         display: none;
@@ -887,6 +903,14 @@ header ul a:hover{
 
     header .box-icons{
         display: none;
+    }
+    .hero-info{
+        top: 50%;
+        bottom:-2%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        justify-items: center;
+        text-align: center;
     }
 
     .menu-icon{
@@ -924,7 +948,10 @@ header ul a:hover{
         width: 100%;
     }
     .project-vid-cont{
-        width:45%;
+        width:80%;
+    }
+    .project-info{
+        width:80%;
     }
     .project-info h1{
         text-wrap: nowrap;
@@ -994,10 +1021,6 @@ header ul a:hover{
 
 @media screen and (max-width: 480px) {
     
-    .blackhole-cont {
-        overflow: hidden;
-    }
-    
     .header-left {
         scale: 0.9;
         margin-left: -30px;
@@ -1005,15 +1028,6 @@ header ul a:hover{
     
     .header-left h2 {
         font-size: 20px;
-    }
-    
-    .hero-info{
-        top: 50%;
-        bottom:-2%;
-        left:0;
-        transform: translateY(-50%);
-        justify-items: center;
-        text-align: center;
     }
     
     .hero-info h1{
@@ -1037,18 +1051,6 @@ header ul a:hover{
         bottom: 30%;
         font-size: 5px;
     }
-
-    .project-vid-cont{
-        width:85%;
-    }
-    .project-card{
-        width:85%;
-        text-align: left;
-    }
-    .project-info{
-        width:80%;
-    }
-
 
     .designer-cont{
         max-width:85% !important;

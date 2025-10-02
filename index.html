@@ -15,29 +15,24 @@
             <div class="header-left">
                 <h2>Karthik <span style="color:#727fde">Poosala</span></h2>
             </div>
-
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
 
             <div class="box-icons">
-                <p>
+                <a href="https://www.instagram.com/shiva_karthik121/" target="_blank">
                     <i class='bx bxl-instagram'></i>
-                </p>
-                <p>
+                </a>
+                <a href="https://github.com/Karthi21475" target="_blank">
                     <i class='bx bxl-github'></i>
-                </p>
-                <p>
+                </a>
+                <a href="https://www.linkedin.com/in/karthik-poosala" target="_blank">
                     <i class='bx bxl-linkedin-square'></i>
-                </p>
+                </a>
             </div>
         </header>
-
-        <div class="blackhole-cont">
-            <video src="./assets/blackhole.mp4" autoplay loop muted plays-inline type="video/mp4"  ></video>
-        </div>
 
         <section class="hero-section">
             <div class="hero-info ">
@@ -56,9 +51,12 @@
             <div class="scroll-icon">
                 <i class="bx bxs-chevron-down-circle"></i>
             </div>
+            <div class="blackhole-cont">
+                <video src="./assets/blackhole.mp4" autoplay loop muted plays-inline type="video/mp4"  ></video>
+            </div>
         </section>
 
-        <section class="info-section">
+        <section class="info-section" id="about">
             <h1 style="display: flex;align-items: center;" class="section-title Display">
                 <i class="bx bxs-star bx-flashing"></i>
                 Hello, There
@@ -102,11 +100,13 @@
             </div>
         </section>
 
-        <section class="my-projects">
+        <section class="my-projects" id="projects">
             <h1 class="section-title Display">My Projects</h1>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <video src="./assets/Klappybird.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    <a href="https://klappybirdy.niat.tech/" target="_blank">
+                        <video src="./assets/Klappybird.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    </a>
                 </div>
                 <div class="project-info fadein-right">
                     <h1>
@@ -122,7 +122,9 @@
             </div>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <video src="./assets/wordle.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    <a href="https://wordle-karthi21475s-projects.vercel.app/" target="_blank">
+                        <video src="./assets/wordle.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    </a>
                 </div>
                 <div class="project-info fadein-right">
                     <h1>
@@ -138,7 +140,9 @@
             </div>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <video src="./assets/landingpage.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank">
+                        <video src="./assets/landingpage.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    </a>
                 </div>
                 <div class="project-info fadein-right">
                     <h1>
@@ -153,7 +157,7 @@
                 </div>
             </div>
         </section>
-        <section class="skills-section">
+        <section class="skills-section" id="skills">
             <h1 class="section-title Display">My Skills</h1>
             <div class="skills-vid-cont">
                 <video class="skills-vid" src="./assets/glob.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
@@ -193,34 +197,19 @@
             </div>
         </div>
         <section class="contact-section">
-            <h1 class="section-title Display">
-                Let's Talk
-            </h1>
-            <div class="soc-con-cont">
-                <div class="social-cont Blur">
-                    <a><i class="bx bxs-phone-call"></i>+91 81253 78419</a>
-                    <a href="https://www.instagram.com/shiva_karthik121/" target="_blank"><i class="bx bxl-instagram"></i>shiva_karthik121</a>
-                    <a href="https://www.linkedin.com/in/karthik-poosala" target="_blank"><i class="bx bxl-linkedin-square"></i>www.linkedin.com/in/karthik-poosala</a>
-                </div>
-                <div class="contact-cont">
-                    <p>Wanna build a new website or improve your existing platform. I'm here to help.</p>
-                    
-                    <p>Full Name</p>
-                    <input type="text" placeholder="Your Full Name" />
-                    
-                    <p>Email Address</p>
-                <input type="text" placeholder="Email Address" />
-                
-                <p>Your Message</p>
-                <input class="input-message" type="text" placeholder="Share your thoughts..." />
-                
-                <button><i class="bx bx-send"></i></button>
-            </div>
-        </div>
+            <form class="contact-form">
+                <h1 class="section-title">
+                    Let's Talk
+                </h1>
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Name" id="name" required />
+                <label for="name">Email:</label>
+                <input type="email" placeholder="Email" id="email" required />
+                <label for="name">Message:</label>
+                <textarea rows="5" placeholder="Message" id="message" required></textarea>
+                <button type="submit"><i class="bx bx-send"></i>Send Message</button>
+            </form>
         </section>
-        <footer class="footer">
-            <h1>Copyright &copy Karthik, Made with 💖 by KarthikPoosala</h1>
-        </footer>
     </div>
     <script src="index.js" ></script>
 </body>
