@@ -1,13 +1,19 @@
-
 body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
     background-color: black;
+    cursor: none !important;
+}
+a{
+    cursor:none;
+}
+a:hover{
+    anchor-name: --cursor-hovered;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 .container{
     position: relative;
@@ -25,7 +31,8 @@ html{
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: -2;
+    
 }
 
 
@@ -36,6 +43,7 @@ header{
     justify-content: space-between;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.121);
+    -webkit-backdrop-filter:blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 0 15px #72a1dea2;
     z-index: 999;
@@ -66,12 +74,13 @@ header ul::after{
     z-index: -1;
     border-radius: 10px;
     background-color: rgba(0, 0, 69, 0.326);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px #72a1de63;
 
     position-anchor: --hovered-link;
 
-    transition: all 0.3s linear(0, 0.002 0.5%, 0.01 1%, 0.021 1.5%, 0.04 2.1%, 0.06 2.6%, 0.089 3.2%, 0.122 3.8%, 0.159 4.4%, 0.227 5.4%, 0.318 6.6%, 0.408 7.7%, 0.667 10.8%, 0.801 12.5%, 0.866 13.4%, 0.921 14.2%, 0.978 15.1%, 1.024 15.9%, 1.071 16.8%, 1.108 17.6%, 1.14 18.4%, 1.168 19.2%, 1.191 20%, 1.212 20.9%, 1.226 21.7%, 1.238 22.6%, 1.245 23.7%, 1.246 24.9%, 1.239 26.2%, 1.226 27.5%, 1.209 28.7%, 1.185 30.1%, 1.156 31.6%, 1.059 36.4%, 1.03 38%, 1.006 39.5%, 0.981 41.3%, 0.964 43%, 0.951 44.7%, 0.943 46.5%, 0.94 47.7%, 0.939 49%, 0.944 51.8%, 0.954 54.5%, 0.985 60.7%, 0.998 63.7%, 1.008 67%, 1.014 70.3%, 1.015 72.8%, 1.014 75.5%, 0.999 90.1%, 0.997 94.8%, 1);
+    transition: all 0.1s linear;
 }
 
 header ul li{
@@ -104,14 +113,15 @@ header ul a:hover{
     height: 30px;
     border: 2px solid #72a1de;
     border-radius: 50%;
-    cursor: pointer;
     transition:all 0.5s;
     color:white;
     text-decoration: none;
     position: relative;
     overflow: hidden;
 }
-
+.box-icons a:hover{
+    anchor-name: --cursor-hovered;
+}
 .box-icons a::after{
     content: "";
     position: absolute;
@@ -148,8 +158,7 @@ header ul a:hover{
     transform: translateY(-50%);
     z-index: -1;
     mix-blend-mode: lighten;
-  }
-  
+}
 .blackhole-cont video{
     width: 100%;
 }
@@ -195,26 +204,26 @@ header ul a:hover{
     font-size: 20px;
 }
 
-.hero-info button{
+.hero-info .btn1{
     color: white;
     padding: 15px 35px;
     border-radius: 10px;
     border: 1px solid #72a1de81;
     background-color: #2200493d;
     box-shadow: 0 0 5px #72a1de81;
-    cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
-.hero-info button:hover{
+.hero-info .btn1:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
 .gradient{
     background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
     background-size: 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 2.5s linear infinite;
 }
@@ -229,28 +238,24 @@ header ul a:hover{
     left: 50%;
     bottom: 8%;
     transform: translateX(-50%);
-    cursor: pointer;
     font-size: 40px;
     animation: scroll-down 2s linear infinite;
-  }
-  
-  @keyframes scroll-down {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+}
 
-
-
+@keyframes scroll-down {
+0% {
+    opacity: 0;
+}
+30% {
+    opacity: 1;
+}
+60% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
 
 .info-section{
     display: flex;
@@ -280,7 +285,6 @@ header ul a:hover{
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    height: 40vh;
     overflow: hidden;
     border: 1px solid gray;
     background-color: #080020b7;
@@ -327,7 +331,6 @@ header ul a:hover{
     color: gray;
     border-radius: 20px;
     box-shadow: 0 0 5px lightgray;
-    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -342,9 +345,6 @@ header ul a:hover{
 
 .card:nth-child(3){
     grid-row: span 2;
-    height: 83vh;
-}
-.card:nth-child(3){
     justify-content: space-around;
 }
 .card:nth-child(3) img{
@@ -386,7 +386,6 @@ header ul a:hover{
     width: 45%;
     mix-blend-mode:exclusion;
     position: relative;
-    cursor: pointer;
     transition: 0.5s;
 }
 
@@ -436,7 +435,6 @@ header ul a:hover{
     border: 1px solid #72a1de81;
     background-color: #2200493d;
     box-shadow: 0 0 5px #72a1de81;
-    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -532,8 +530,8 @@ header ul a:hover{
 .gradient2{
     background-image: linear-gradient(to right,white,gray,white );
     background-size: 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient2 5s linear infinite;
 }
@@ -547,9 +545,15 @@ header ul a:hover{
 /* SLIDER  */
 
 .slider{
-    width: 90%;
+    width: 100%;
     height: var(--height);
     overflow: hidden;
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
     mask-image: linear-gradient(
         to right,
         transparent,
@@ -595,34 +599,25 @@ header ul a:hover{
 
   /* CONTACT SECTION */
 .contact-section{
-    width: 80%;
-    height: fit-content;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    height:250px;
     gap: 10%;
-    align-items: center;
     position: relative;
-    margin-bottom:10vh;
+    margin-bottom: 10vh;
 }
-.social-cont {
+.contact-circle{
+    max-width: 250px;
+    width:80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    margin-inline: auto;
-    margin-bottom:3rem;
-    gap: 25px;
-}
-
-.social-cont a{
-    color: lightgray;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    font-size: 20px;
-    text-wrap: nowrap;
-}
-
-.social-cont i{
-    color: #7668ff;
-    font-size: 30px;
-    margin-right: 10px;
+    color: black;
 }
 
 
@@ -688,151 +683,6 @@ header ul a:hover{
     }
 }
 
-/* Sidebar */
-
-.menu-icon{
-    font-size: 35px;
-    cursor: pointer;
-    display: none;
-}
-
-
-.sidebar{
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 70%;
-    width: 0%;
-    background-color: #000000b8;
-    z-index: 999;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    border-bottom-left-radius: 100%;
-    
-}
-
-.close-icon{
-    font-size: 50px;
-    color: lightgray;
-    padding-left: 10px;
-    cursor: pointer;
-}
-
-.sidebar ul{
-    padding-left: 20px;
-}
-
-.sidebar ul li{
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.sidebar ul li a{
-    text-decoration: none;
-    color: lightgray;
-    font-size: 30px;
-    font-weight: 900;
-    text-shadow:0 0 15px #4c4c4c;
-}
-
-.social-sidebar{
-    padding-left: 20px;
-    margin-top: 60px;
-    text-wrap: nowrap;
-}
-
-.social-sidebar a{
-    font-size: 35px;
-    padding: 5px 5px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-/* Sidebar Open ANimation */
-.sidebar.open-sidebar{
-    animation: openSideBarAnimation 1.5s forwards;
-}
-
-@keyframes openSideBarAnimation {
-    to{
-        width: 80%;
-        opacity: 1;
-        bottom: 0;
-        border-radius: 0;
-    }
-}
-
-/* Sidebar close ANimation */
-
-.sidebar.close-sidebar{
-    animation: closeSideBarAnimation 1.5s forwards;
-}
-
-@keyframes closeSideBarAnimation {
-    from{
-        width: 80%;
-        opacity: 1;
-        bottom: 0;
-        border-radius: 0;
-    }
-    to{
-        width: 0;
-        opacity: 0;
-        bottom: 70%;
-        border-bottom-left-radius: 50%;
-    }
-}
-
-.contact-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    border-radius: 10px;
-    padding:1rem;
-    border:2px solid white;
-    background-color: #0f1217;
-    box-shadow: 0 0 10px lightgray;
-
-}
-.contact-form input, .contact-form textarea{
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    background-color: #0f1217;
-    color: white;
-    font-size: 16px;
-    resize: none;
-    outline: none;
-    transition: 0.3s;
-}
-.contact-form button{
-    width: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #72a1de81;
-    background-color: #2200493d;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.contact-form button:hover{
-    box-shadow: 0 0 15px #72a1de81;
-    opacity: 0.7;
-}
-.soc-con-cont{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5%;
-}
-
 
 
 @media (max-aspect-ratio: 16/9){
@@ -849,7 +699,79 @@ header ul a:hover{
     }
 }
 
-
+@media screen and (min-width:780px){
+    body{
+        cursor: none;
+    }
+    body:has(.container .contact-section a:hover) #circle-outline,
+    body:has(.container .box-icons a:hover) #circle-outline,
+    body:has(.container .hero-section a:hover) #circle-outline,
+    body:has(.container .project-card a:hover) #circle-outline{
+        position-anchor: --cursor-hovered;
+        top: anchor(top);
+        left: anchor(left);
+        right:anchor(right);
+        bottom:anchor(bottom);
+        transform: translate(0,0);
+        border: white solid 2px;
+        border-radius: 10px;
+    }
+    body:has(.container .box-icons a:hover) #circle-outline{
+        border-radius: 100%;
+    }
+    body:has(.container .contact-section a:hover) #circle-outline{
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        color:rgba(0, 0, 0, 0.432);
+        border-color: black;
+    }
+    body:has(header ul li:hover) #circle-outline{
+        position-anchor: --hovered-link;
+        top: anchor(top);
+        left: anchor(left);
+        right:anchor(right);
+        bottom:anchor(bottom);
+        border-radius: 10px;
+        transform: translate(0,0);
+        border: white solid 2px;
+    }
+    body:not(:has(header ul li:hover)):not(:has(a:hover)) #circle-outline{
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+    }
+    #circle {
+        height: 5px;
+        width: 5px;
+        position: fixed;
+        border-radius: 50%;
+        background-color: white;
+        transition: box-shadow 0.1s linear;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+        top: var(--yaxis-);
+        left: var(--xaxis-);
+        z-index: 1000;
+        pointer-events: none;
+    }
+    #circle i{
+        display: none;
+    }
+    #circle-outline {
+        position: fixed;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all 0.1s linear;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+        top: var(--yaxis-);
+        left: var(--xaxis-);
+        z-index: 1000;
+        pointer-events: none;
+    }
+}
 @media screen and (max-width: 1200px){
 
     .hero-info h1{
@@ -868,7 +790,10 @@ header ul a:hover{
 
     .card:nth-child(3){
         grid-column: span 2;
-        height: 70vh;
+        max-height: 50vh;
+    }
+    .card:nth-child(3) img{
+        height:50%;
     }
 
     .info-cards .card h1{
@@ -900,10 +825,6 @@ header ul a:hover{
     header ul{
         display: none;
     }
-
-    header .box-icons{
-        display: none;
-    }
     .hero-info{
         top: 50%;
         bottom:-2%;
@@ -912,11 +833,6 @@ header ul a:hover{
         justify-items: center;
         text-align: center;
     }
-
-    .menu-icon{
-        display: inline;
-    }
-
 
     .Blur{
         animation: none;
@@ -939,10 +855,6 @@ header ul a:hover{
         grid-template-columns: auto;
     }
 
-    .card:nth-child(3){
-        grid-column: span 2;
-        height: 70vh;
-    }
     
     .card video{
         width: 100%;
@@ -973,7 +885,6 @@ header ul a:hover{
         gap: 30px;
     }
     
-
     .designer-cont h1{
         margin-bottom: 0;
         font-size:2rem;
@@ -1002,19 +913,98 @@ header ul a:hover{
         margin-top: 50px;
         margin-bottom: 50px;
     }
-    .contact-cont{
-        width:100%;
-        border:2px solid white;
-        padding:2rem;
-        border-radius: 10px;
+
+    /* Sidebar */
+
+    .menu-icon{
+        display: flex;
     }
-    .soc-con-cont{
-        width:100%;
-        flex-direction: column;
-        gap:50px;
+
+
+    .sidebar{
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 70%;
+        width: 0%;
+        background-color: #000000b8;
+        z-index: 999;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
+        -webkit-backdrop-filter:blur(10px);
+        backdrop-filter: blur(10px);
+        opacity: 1;
+        /* border-bottom-left-radius: 100%; */
+        
     }
-    .footer{
-        font-size: 10px;
+
+    .close-icon{
+        font-size: 50px;
+        color: lightgray;
+        padding-left: 10px;
+    }
+
+    .sidebar ul{
+        padding-left: 20px;
+    }
+
+    .sidebar ul li{
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .sidebar ul li a{
+        text-decoration: none;
+        color: lightgray;
+        font-size: 30px;
+        font-weight: 900;
+        text-shadow:0 0 15px #4c4c4c;
+    }
+
+    .social-sidebar{
+        padding-left: 20px;
+        margin-top: 60px;
+        text-wrap: nowrap;
+    }
+
+    .social-sidebar a{
+        font-size: 35px;
+        padding: 5px 5px;
+        transition: 0.5s;
+    }
+
+    /* Sidebar Open ANimation */
+    .sidebar.open-sidebar{
+        animation: openSideBarAnimation 1.5s forwards;
+    }
+
+    @keyframes openSideBarAnimation {
+        to{
+            width: 80%;
+            opacity: 1;
+            bottom: 0;
+            border-radius: 0;
+        }
+    }
+
+    /* Sidebar close ANimation */
+
+    .sidebar.close-sidebar{
+        animation: closeSideBarAnimation 1.5s forwards;
+    }
+
+    @keyframes closeSideBarAnimation {
+        from{
+            width: 80%;
+            opacity: 1;
+            bottom: 0;
+            border-radius: 0;
+        }
+        to{
+            width: 0;
+            opacity: 0;
+            bottom: 70%;
+            border-bottom-left-radius: 50%;
+        }
     }
 }
 
@@ -1080,10 +1070,6 @@ header ul a:hover{
 
     .slider{
         bottom: 0%;
-    }
-
-    .contact-section{
-        scale: 0.9;
     }
 
     .social-cont{

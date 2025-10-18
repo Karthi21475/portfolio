@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
+    <div id="circle">
+        <i class='bxr bx-arrow-in-up-right-stroke-square'></i> 
+    </div>
+    <i class='bxr bx-ufo'  id="circle-outline"></i>
     <div class="container">
         <video class="bg-vid" src="./assets/galaxy.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
         
@@ -22,13 +28,13 @@
             </ul>
 
             <div class="box-icons">
-                <a href="https://www.instagram.com/shiva_karthik121/" target="_blank">
+                <a href="https://www.instagram.com/shiva_karthik121/" target="_blank" rel="noopener">
                     <i class='bx bxl-instagram'></i>
                 </a>
-                <a href="https://github.com/Karthi21475" target="_blank">
+                <a href="https://github.com/Karthi21475" target="_blank" rel="noopener">
                     <i class='bx bxl-github'></i>
                 </a>
-                <a href="https://www.linkedin.com/in/karthik-poosala" target="_blank">
+                <a href="https://www.linkedin.com/in/karthik-poosala" target="_blank" rel="noopener">
                     <i class='bx bxl-linkedin-square'></i>
                 </a>
             </div>
@@ -46,7 +52,7 @@
                 <p>I'm a Front-end developer with Experience in Website, Mobile and Software development. Check out my Skills.
                 </p>
 
-                <button><i class="bx bx-send"></i>Contact me</button>
+                <a class="btn1" href="#contact-section" ><i class="bx bx-send"></i>Contact me</a>
             </div>
             <div class="scroll-icon">
                 <i class="bx bxs-chevron-down-circle"></i>
@@ -65,7 +71,7 @@
             <div class="info-cards">
                 <div class="card">
                     <h1>Hi there, I'm Karthik</h1>
-                    <img src="./assets/019ed0a8-e944-4f6c-932a-0f8925b9dbd2.png" class="grid-1" />
+                    <img src="./assets/019ed0a8-e944-4f6c-932a-0f8925b9dbd2.png" class="grid-1" title="A Picture Of Me"/>
                     <p>
                         Currently persuing my bachelours in 
                         Computer Science and Engineering at 
@@ -74,7 +80,7 @@
                 </div>
                 <div class="card">
                     <h1>My Passion for Coding</h1>
-                    <img src="./assets/grid2.png" />
+                    <img src="./assets/grid2.png" title="A Picture Showing My Passion"/>
                     <p>
                         I love solving problems and building things through code
                         Programming isn't just my profession, it my passion.
@@ -83,7 +89,7 @@
                 </div>
                 <div class="card">
                     <h1>Tech Stack</h1>
-                    <img src="./assets/TechStack.png" class="hover"/>
+                    <img src="./assets/TechStack.png" class="hover" title="A Picture Representing My Stack"/>
                     <p>
                         I'm specialized in many languages, frameworks, tools
                         that allow me to build robust and scalable applications.
@@ -91,7 +97,7 @@
                 </div>
                 <div class="card">
                     <h1>Hobbies</h1>
-                    <img src="./assets/grid4.png" />
+                    <img src="./assets/grid4.png" title="A picture of connecting nodes"/>
                     <p>
                         My hobbies are to play games and that made me learn 
                         Game dev which was very fun to learn
@@ -104,8 +110,8 @@
             <h1 class="section-title Display">My Projects</h1>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <a href="https://klappybirdy.niat.tech/" target="_blank">
-                        <video src="./assets/Klappybird.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    <a href="https://klappybirdy.niat.tech/" target="_blank" rel="noopener">
+                        <video src="./assets/Klappybird.webm" autoplay loop muted plays-inline type="video/webm" ></video>
                     </a>
                 </div>
                 <div class="project-info fadein-right">
@@ -117,12 +123,12 @@
                         I love Games and programming one was a really entertaining task.
                         This was done by using only pure HTML,CSS and JAVASCRIPT.
                     </p>
-                    <a href="https://klappybirdy.niat.tech/" target="_blank"><i class="bx bx-link-external"></i>View Project</a>
+                    <a href="https://klappybirdy.niat.tech/" target="_blank" rel="noopener"><i class="bx bx-link-external"></i>View Project</a>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <a href="https://wordle-karthi21475s-projects.vercel.app/" target="_blank">
+                    <a href="https://wordle-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener">
                         <video src="./assets/wordle.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
                     </a>
                 </div>
@@ -135,13 +141,13 @@
                         Using some problem solving knowledge, 
                         it includes features like scoring system, wrong guess, correct guess and Gameover handling.
                     </p>
-                    <a href="https://wordle-karthi21475s-projects.vercel.app/" target="_blank"><i class="bx bx-link-external"></i>View Project</a>
+                    <a href="https://wordle-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener"><i class="bx bx-link-external"></i>View Project</a>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-vid-cont Blur">
-                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank">
-                        <video src="./assets/landingpage.mp4" autoplay loop muted plays-inline type="video/mp4" ></video>
+                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener">
+                        <video src="./assets/landingpage.webm" autoplay loop muted plays-inline type="video/webm" ></video>
                     </a>
                 </div>
                 <div class="project-info fadein-right">
@@ -153,7 +159,25 @@
                         Using MERN Technologies, it includes features like Authorization, Authentication, 
                         Cart system.
                     </p>
-                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank"><i class="bx bx-link-external"></i>View Project</a>
+                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener"><i class="bx bx-link-external"></i>View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-vid-cont Blur">
+                    <a href="https://frontend-git-main-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener">
+                        <video src="./assets/landingpage.webm" autoplay loop muted plays-inline type="video/webm" ></video>
+                    </a>
+                </div>
+                <div class="project-info fadein-right">
+                    <h1>
+                        My <span class="gradient">Instagram</span> Clone
+                    </h1>
+                    <h2 style="color:red">WORK IN PROGRESS</h2>
+                    <p>
+                        This is my fourth and one of my major  projects that i am working on
+                        Using MERN Technologies, it includes features like Authorization, Authentication,Uploading.
+                    </p>
+                    <a href="https://insta-share-git-main-karthi21475s-projects.vercel.app/" target="_blank" rel="noopener"><i class="bx bx-link-external"></i>View Project</a>
                 </div>
             </div>
         </section>
@@ -185,30 +209,21 @@
         </section>
         <div class="slider" reverse="true" style="--width:100px;--height:100px;--quantity:9;">
             <div class="list">
-                <div class="item" style="--position:1"><img src="./assets/2.png" /></div>
-                <div class="item" style="--position:2"><img src="./assets/3.webp" /></div>
-                <div class="item" style="--position:3"><img src="./assets/5.png" /></div>
-                <div class="item" style="--position:4"><img src="./assets/6.png" /></div>
-                <div class="item" style="--position:5"><img src="./assets/7.png" /></div>
-                <div class="item" style="--position:6"><img src="./assets/10.png" /></div>
-                <div class="item" style="--position:7"><img src="./assets/12.png" /></div>
-                <div class="item" style="--position:8"><img src="./assets/13.png" /></div>
-                <div class="item" style="--position:9"><img src="./assets/14.png" /></div>
+                <div class="item" style="--position:1"><img src="./assets/2.png" title="CSS"/></div>
+                <div class="item" style="--position:2"><img src="./assets/3.webp" title="Docker"/></div>
+                <div class="item" style="--position:3"><img src="./assets/5.png" title="figma"/></div>
+                <div class="item" style="--position:4"><img src="./assets/6.png" title="CSS"/></div>
+                <div class="item" style="--position:5"><img src="./assets/7.png" title="Git Hub"/></div>
+                <div class="item" style="--position:6"><img src="./assets/10.png" title="HTML"/></div>
+                <div class="item" style="--position:7"><img src="./assets/12.png" title="JS"/></div>
+                <div class="item" style="--position:8"><img src="./assets/13.png" title="Next JS"/></div>
+                <div class="item" style="--position:9"><img src="./assets/14.png" title="Framer motion"/></div>
             </div>
         </div>
-        <section class="contact-section">
-            <form class="contact-form">
-                <h1 class="section-title">
-                    Let's Talk
-                </h1>
-                <label for="name">Name:</label>
-                <input type="text" placeholder="Name" id="name" required />
-                <label for="name">Email:</label>
-                <input type="email" placeholder="Email" id="email" required />
-                <label for="name">Message:</label>
-                <textarea rows="5" placeholder="Message" id="message" required></textarea>
-                <button type="submit"><i class="bx bx-send"></i>Send Message</button>
-            </form>
+        <section class="contact-section" id="contact-section">
+            <a href="mailto:karthigaming121@gmail.com" class="contact-circle">
+                Let's Talk
+            </a>
         </section>
     </div>
     <script src="index.js" ></script>
