@@ -15,7 +15,7 @@ header a:hover,
     anchor-name: --cursor-hovered;
 }
 html{
-    scroll-behavior: smooth !important;
+    scroll-behavior: scroll !important;
 }
 .container{
     position: relative;
@@ -34,7 +34,6 @@ html{
     right: 0;
     bottom: 0;
     z-index: -2;
-    
 }
 
 
@@ -63,7 +62,7 @@ header ul{
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    gap:1rem;
+    /* gap:1rem; */
     anchor-name: --cursor-hovered;
 }
 header ul::after{
@@ -89,17 +88,13 @@ header ul li{
     list-style: none;
 }
 
-header ul a{
+header ul li a{
+    padding-inline: 1rem !important;
     text-decoration: none;
     color: white;
     font-weight: 700;
     transition: 0.3s;
     padding: 10px;
-}
-
-header ul a:hover{
-    text-shadow: 0 0 15px black;
-    anchor-name: --cursor-hovered;
 }
 
 .box-icons{
@@ -122,7 +117,7 @@ header ul a:hover{
     overflow: hidden;
 }
 .box-icons a:hover{
-    anchor-name: --cursor-hovered;
+    anchor-name: --link-hovered;
 }
 .box-icons a::after{
     content: "";
@@ -400,10 +395,6 @@ header ul a:hover{
     transition: 0.5s;
 }
 
-.project-card video:hover{
-    box-shadow: 0 0 25px rgb(255, 255, 255);
-}
-
 .project-info{
     display: flex;
     flex-direction: column;
@@ -416,7 +407,7 @@ header ul a:hover{
     width: 90%;
     font-size: 25px;
     font-weight: bold;
-    text-wrap: nowrap;
+    white-space: nowrap;
     margin-top: 0;
     margin-bottom: 10px;
     max-width: 450px;
@@ -424,7 +415,6 @@ header ul a:hover{
 
 .project-info p{
     width: 90%;
-    max-width: 300px;
     margin-bottom: 50px;
     margin-top: 0;
 }
@@ -457,11 +447,13 @@ header ul a:hover{
 
 .skills-cont{
     width: 100%;
-    height: 80vh;
+    max-height: 80vh;
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap:5%;
+    gap:10vh;
 }
 .skills-vid-cont{
     width:100%;
@@ -473,7 +465,8 @@ header ul a:hover{
     align-items: center;
 }
 .skills-vid{
-    width: 70%;
+    min-width: 70%;
+    overflow: hidden;
     mix-blend-mode:exclusion;
 }
 
@@ -481,11 +474,14 @@ header ul a:hover{
     display: flex;
     flex-direction: column;
     align-items: start;
-    max-width: 35%;
+    width:100%;
+    /* max-width: 35%; */
     /* height:fit-content; */
     border-radius: 10px;
     padding:1rem;
     border:2px solid white;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .designer-cont h1{
@@ -508,11 +504,14 @@ header ul a:hover{
     display: flex;
     flex-direction: column;
     align-items: start;
-    max-width: 35%;
+    width:100%;
+    /* max-width: 35%; */
     /* height:fit-content; */
     border-radius: 10px;
     padding:1rem;
     border:2px solid white;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .coder-cont h1{
@@ -607,7 +606,7 @@ header ul a:hover{
     height:350px;
     position: relative;
     /* background-color: black; */
-    mix-blend-mode: exclusion;
+    mix-blend-mode: exclusion; 
     ul{
         position:absolute;
         top:50%;
@@ -715,13 +714,13 @@ header ul a:hover{
     }
 
     ul li:hover:nth-child(3) a{
-    background: #dd4b39;
+    background: #ff0000;
     }
     ul li:hover:nth-child(3) a:before{
-    background: #b33a2b;
+    background: #b31804;
     }
     ul li:hover:nth-child(3) a:after{
-    background: #e66a5a;
+    background: #ea4630;
     }
 
     ul li:hover:nth-child(4) a{
@@ -759,6 +758,9 @@ header ul a:hover{
     body{
         cursor: none;
     }
+    .my-projects .project-card .Blur:hover a video{
+        filter: blur(5px);
+    }
     body:has(header ul li:hover) #d-circle,
     body:has(.container .hero-section a:hover) #d-circle,
     body:has(.container .project-card a:hover) #d-circle{
@@ -770,9 +772,21 @@ header ul a:hover{
         transform: translate(0,0);
         border: white solid 2px;
         border-radius: 10px;
+        transition: top 0s linear;
+    }
+    body:has(.container .project-card .Blur a:hover) #d-circle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >i:nth-child(1){
+            display: flex;
+        }
+        >i:nth-child(2){
+            display: none;
+        }
     }
     body:has(.container .box-icons a:hover) #d-circle{
-        position-anchor: --cursor-hovered;
+        position-anchor: --link-hovered;
         top: anchor(top);
         left: anchor(left);
         right:anchor(right);
@@ -780,13 +794,22 @@ header ul a:hover{
         border-radius: 100%;
         transform: translate(0,0);
         border: white solid 2px;
+        transition: top 0s linear;
     }
     body:not(:has(header ul li:hover)):not(:has(a:hover)) #d-circle,
     body:has(.contact-section a:hover) #d-circle{
-        /* display: none; */
+        font-size: 30px;
         height: 30px;
         width: 30px;
-        font-size: 30px;
+        transition: top 0s linear;
+    }
+    #d-circle{
+        i:nth-child(1){
+            font-size: 30px;
+            display: none;
+        }i:nth-child(2){
+            display: flex;
+        }
     }
     #circle {
         height: 5px;
@@ -808,23 +831,13 @@ header ul a:hover{
         position: fixed;
         border-radius: 50%;
         background-color: transparent;
-        /* transition: all 0.1s linear; */
+        transition: top 0.1s linear,left 0.1s linear;
         transform-origin: center;
         transform: translate(-50%, -50%);
         top: var(--yaxis-);
         left: var(--xaxis-);
         z-index: 1000;
         pointer-events: none;
-    }
-    
-    #ufo{
-        position: fixed;
-        transition: all 0.5s;
-        /* top: var(--yaxis-);
-        left: var(--xaxis-); */
-    }
-    #d-circle i:first-child{
-        display: none;
     }
 }
 @media screen and (max-width: 1200px){
@@ -856,12 +869,6 @@ header ul a:hover{
     }
 }
 @media screen and (orientation: portrait){
-    .skills-cont{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap:10vh;
-    }
     .card:nth-child(3) img{
         height:50%;
         grid-row: span 1;
